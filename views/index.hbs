@@ -17,14 +17,25 @@
   <thead class="thead-primary table-dark text-center">
     <tr class="bg-primary ">
       <th>Link</th>
+      <th>Creator</th>
       <th>Like</th>
     </tr>
   </thead>
   <tbody>
     {{#each links}}
     <tr>
-      <td class="align-middle"><a href="{{this.url}}">{{this.url}}</a></td>
-      <td><a href="/like-link/{{this._id}}" class="btn btn-sm btn-outline-primary btn-block px-5">Like</a></td>
+      <td class="align-middle">
+        <a href="{{this.url}}">{{this.url}}</a>
+      </td>
+      <td class="align-middle text-center">
+        {{this._owner.username}}
+      </td>
+      <td>
+        <a 
+          href="/like-link/{{this._id}}" 
+          class="btn btn-sm btn-{{#unless this.isLiked}}outline-{{/unless}}primary btn-block px-5"
+          >Like</a>
+      </td>
     </tr>
     {{/each}}
   </tbody>

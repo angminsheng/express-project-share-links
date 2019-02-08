@@ -1,0 +1,23 @@
+<h2>My Profile</h2>
+
+<div class="row">
+  <div class="col-3"><strong>Username</strong></div>
+  <div class="col-9">{{user.username}}</div>
+  <div class="col-3"><strong>Creation date</strong></div>
+  <div class="col-9">{{user.createdAt}}</div>
+</div>
+
+<h2 class="mt-5">My Links</h2>
+
+<ul>
+{{#each links}}
+  <li><a class="align-middle" href="{{this.url}}">{{this.url}}</a> <a href="/delete-link/{{this._id}}" class="btn btn-sm btn-outline-danger ml-1">Delete</a></li>
+{{/each}}
+</ul>
+
+<h2 class="mt-5">My Likes</h2>
+<ul>
+{{#each likes}}
+  <li><a href="{{this._link.url}}">{{this._link.url}}</a></li>
+{{/each}}
+</ul>
