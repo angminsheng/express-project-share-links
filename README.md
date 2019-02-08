@@ -25,3 +25,21 @@
 8. `GET  /delete-link/:linkId`
 9. `GET  /profile`
 
+## FAQ
+
+### How can I install Bootstrap with SCSS?
+
+First, install the NPM package `bootstrap`
+```
+npm i bootstrap
+```
+
+Then you can write the following `public/stylesheets/style.scss`
+```scss
+$primary: #563d7c; // Override the default $primary color to purple
+
+@import '../..//node_modules/bootstrap/scss/bootstrap.scss';
+
+// I can write my own SCSS below
+// ...
+```
